@@ -12,4 +12,8 @@ public class LocalizacaoRepository {
         dados.setId(id++);
         LOCALIZACAO.add(dados);
     }
+
+    public static List<Localizacao> listarTodos() {
+        return LOCALIZACAO;
+    }
 }
