@@ -37,4 +37,10 @@ public class Localizacao {
         return idAreaVerde;
     }
 
+    //Aplicação do toString
+    @Override
+    public String toString(){
+        return "id: "+id+" latitude:" + latitude + " longitude: " + longitude + " identificação da area: " + idAreaVerde;
+    }
+
 }
