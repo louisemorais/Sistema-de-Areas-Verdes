@@ -16,4 +16,13 @@ public class LocalizacaoRepository {
     public static List<Localizacao> listarTodos() {
         return LOCALIZACAO;
     }
+
+    public Localizacao buscar(int id){
+        for(Localizacao localizacao: LOCALIZACAO){
+            if(id== localizacao.getId()){
+                return localizacao;
+            }
+        }
+        return null;
+    }
 }
