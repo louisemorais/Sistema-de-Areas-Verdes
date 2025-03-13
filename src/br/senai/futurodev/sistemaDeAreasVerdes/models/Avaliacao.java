@@ -72,4 +72,14 @@ public class Avaliacao {
                 +this.coletaDeResiduo+this.transportePublico)/5.0;
         return formula;
     }
+
+    public String toString(){
+        return  "id: "+id+
+                "\nQualidade das árvores: Avaliações: ★" + qualidadeArvore +
+                "\nQualidade do ar: Avaliações: ★" + qualidadeAr +
+                "\nAusência de Poluição sonora: Avaliações: ★" + poluicaosonora+
+                "\nColeta de resíduo: Avaliações: ★" + coletaDeResiduo+
+                "\nTransporte público: Avaliações: ★"+ transportePublico+
+                "\nTipo de área verde: "+ tipoDeAreaVerde;
+    }
 }
