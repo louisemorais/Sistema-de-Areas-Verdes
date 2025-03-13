@@ -1,4 +1,4 @@
-package models;
+package br.senai.futurodev.sistemaDeAreasVerdes.models;
 
 public class Localizacao {
     //atributos

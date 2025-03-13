@@ -1,6 +1,6 @@
-package repositories;
+package br.senai.futurodev.sistemaDeAreasVerdes.repositories;
 
-import models.Localizacao;
+import br.senai.futurodev.sistemaDeAreasVerdes.models.Localizacao;
 import java.util.ArrayList;
 import java.util.List;
 
