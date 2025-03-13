@@ -66,4 +66,10 @@ public class Avaliacao {
     public String getTipoDeAreaVerde() {
         return tipoDeAreaVerde;
     }
+
+    public double mediaNota(){
+        double formula= (this.qualidadeArvore+this.qualidadeAr+this.poluicaosonora
+                +this.coletaDeResiduo+this.transportePublico)/5.0;
+        return formula;
+    }
 }
