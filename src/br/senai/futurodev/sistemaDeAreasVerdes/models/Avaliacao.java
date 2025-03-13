@@ -37,4 +37,33 @@ public class Avaliacao {
     public void setipoDeAreaVerde(String tipoDeAreaVerde) {
         this.tipoDeAreaVerde = tipoDeAreaVerde;
     }
+
+    //get
+    public int getId() {
+        return id;
+    }
+
+    public double getQualidadeArvore() {
+        return qualidadeArvore;
+    }
+
+    public double getQualidadeAr() {
+        return qualidadeAr;
+    }
+
+    public double getPoluicaosonora() {
+        return poluicaosonora;
+    }
+
+    public double getColetaDeResiduo() {
+        return coletaDeResiduo;
+    }
+
+    public double getTransportePublico() {
+        return transportePublico;
+    }
+
+    public String getTipoDeAreaVerde() {
+        return tipoDeAreaVerde;
+    }
 }
