@@ -1,13 +1,13 @@
 package br.senai.futurodev.sistemaDeAreasVerdes.models;
 
 public class Avaliacao {
-    public int id;
-    public double qualidadeArvore;
-    public double qualidadeAr;
-    public double poluicaosonora;
-    public double coletaDeResiduo;
-    public double transportePublico;
-    public String tipoDeAreaVerde;
+    private int id;
+    private double qualidadeArvore;
+    private double qualidadeAr;
+    private double poluicaosonora;
+    private double coletaDeResiduo;
+    private double transportePublico;
+    private String tipoDeAreaVerde;
 
     //set
     public void setId(int id){
