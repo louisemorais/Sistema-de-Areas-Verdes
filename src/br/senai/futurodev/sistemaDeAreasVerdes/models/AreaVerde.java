@@ -33,4 +33,26 @@ public class AreaVerde {
     public void setListaDeAvaliacoes(List avaliacoes){
         this.listaDeAvaliacoes=avaliacoes;
     }
+    //get
+    public int getId(){
+        return id;
+    }
+    public String getNome(){
+        return nome;
+    }
+    public String getTipoDeVegetacao(){
+        return tipoDeVegetacao;
+    }
+    public double getHorariosDeFuncionamento(){
+        return horariosDeFuncionamento;
+    }
+    public Localizacao getLocalizacao(){
+        return localizacao;
+    }
+    public List<String> getAtividadesDisponiveis() {
+        return atividadesDisponiveis;
+    }
+    public List<Avaliacao> getListaDeAvaliacoes() {
+        return listaDeAvaliacoes;
+    }
 }
