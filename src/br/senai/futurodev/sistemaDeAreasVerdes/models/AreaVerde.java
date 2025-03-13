@@ -67,4 +67,14 @@ public class AreaVerde {
         }
         return soma/ listaDeAvaliacoes.size() ;
     }
+
+    @Override
+    public String toString(){
+        return  "Area verde:" +
+                "\n"+ "nome:"+ nome +
+                "\ntipo de vegetacao:"+ tipoDeVegetacao+
+                "\nHorários de Funcionamento: " +
+                "\natividades disponiveis: "+ atividadesDisponiveis+
+                "\nMédia das avaliação: "+listaDeAvaliacoes;
+    }
 }
