@@ -55,4 +55,16 @@ public class AreaVerde {
     public List<Avaliacao> getListaDeAvaliacoes() {
         return listaDeAvaliacoes;
     }
+
+    //metodo calcular media
+    Avaliacao avaliacao=new Avaliacao();
+    public double calcularMediaAvaliacoes(){
+        if (listaDeAvaliacoes==null || listaDeAvaliacoes.isEmpty())
+            return 0.0;
+        double soma= 0.0;
+        for (Avaliacao listagemDeNota : listaDeAvaliacoes){
+            soma =avaliacao.mediaNota();
+        }
+        return soma/ listaDeAvaliacoes.size() ;
+    }
 }
