@@ -7,11 +7,9 @@ public class Localizacao {
     private double longitude;
     private int idAreaVerde;
 
-    public Localizacao(int id, double latitude, double longitude, int idAreaVerde){
+    public Localizacao(double latitude, double longitude){
         this.setLongitude(longitude);
         this.setLatitude(latitude);
-        this.setId(id);
-        this.setIdAreaVerde(idAreaVerde);
     }
 
     //set
@@ -44,10 +42,13 @@ public class Localizacao {
         return idAreaVerde;
     }
 
+    public String imprimitBasico(){
+        return " latitude:" + latitude + " longitude: " + longitude;
+    }
+
     //Aplicação do toString
     @Override
     public String toString(){
-        return "id: "+id+" latitude:" + latitude + " longitude: " + longitude + " identificação da area: " + idAreaVerde;
+        return "id: "+id+ " latitude:" + latitude + " longitude: " + longitude + " identificação da area: " + idAreaVerde;
     }
-
 }
