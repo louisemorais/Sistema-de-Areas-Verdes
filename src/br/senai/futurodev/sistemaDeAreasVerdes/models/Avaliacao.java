@@ -14,23 +14,28 @@ public class Avaliacao {
         this.id=id;
     }
     public void setQualidadeArvore(double qualidadeArvore){
-        this.qualidadeArvore=qualidadeArvore;
+        double nota= validacaoDeNota(qualidadeArvore);
+        this.qualidadeArvore=nota;
     }
 
     public void setQualidadeAr(double qualidadeAr) {
-        this.qualidadeAr = qualidadeAr;
+        double nota=validacaoDeNota(qualidadeAr);
+        this.qualidadeAr = nota;
     }
 
     public void setAusenciaPoluicaoSonora(double ausenciapoluicaosonora) {
-        this.poluicaosonora=ausenciapoluicaosonora;
+        double nota= validacaoDeNota(ausenciapoluicaosonora);
+        this.poluicaosonora=nota;
     }
 
     public void setColetaDeResiduo(double coletaDeResiduo) {
-        this.coletaDeResiduo= coletaDeResiduo;
+        double nota= validacaoDeNota(coletaDeResiduo);
+        this.coletaDeResiduo= nota;
     }
 
     public void setTransportePublico(double transportePublico) {
-        this.transportePublico = transportePublico;
+        double nota= validacaoDeNota(transportePublico);
+        this.transportePublico = nota;
     }
 
     public void setipoDeAreaVerde(String tipoDeAreaVerde) {
@@ -70,6 +75,15 @@ public class Avaliacao {
         double formula= (this.qualidadeArvore+this.qualidadeAr+this.poluicaosonora
                 +this.coletaDeResiduo+this.transportePublico)/5.0;
         return formula;
+    }
+
+    public double validacaoDeNota(double nota) {
+        if (nota < 1) {
+            return 1;
+        }if(nota >5) {
+            return 5;
+        }
+        return nota;
     }
 
     public Avaliacao(int id, double qualidadeArvore, double qualidadeAr, double poluicaosonora, double coletaDeResiduo
