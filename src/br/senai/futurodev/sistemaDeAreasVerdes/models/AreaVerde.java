@@ -1,5 +1,6 @@
 package br.senai.futurodev.sistemaDeAreasVerdes.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AreaVerde {
@@ -55,6 +56,11 @@ public class AreaVerde {
     public List<Avaliacao> getListaDeAvaliacoes() {
         return listaDeAvaliacoes;
     }
+
+    public AreaVerde(){
+        this.listaDeAvaliacoes=new ArrayList<Avaliacao>();
+    }
+
     //metodo calcular media
     public double calcularMediaAvaliacoes(){
         if (listaDeAvaliacoes==null || listaDeAvaliacoes.isEmpty())
@@ -65,7 +71,6 @@ public class AreaVerde {
         }
         return soma/ listaDeAvaliacoes.size() ;
     }
-
     @Override
     public String toString(){
         return  "Area verde:" +
@@ -73,6 +78,6 @@ public class AreaVerde {
                 "\ntipo de vegetacao:"+ tipoDeVegetacao+
                 "\nHorários de Funcionamento: " +
                 "\natividades disponiveis: "+ atividadesDisponiveis+
-                "\nMédia das avaliação: "+listaDeAvaliacoes;
+                "\nMédia das avaliação: "+ calcularMediaAvaliacoes();
     }
 }
