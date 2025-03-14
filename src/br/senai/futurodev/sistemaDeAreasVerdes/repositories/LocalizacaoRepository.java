@@ -6,18 +6,23 @@ import java.util.List;
 
 public class LocalizacaoRepository {
     private static List<Localizacao> LOCALIZACAO = new ArrayList<>();
-    private static int id= 1;
+    private static int id;
 
-    public void salvarDados(Localizacao dados){
-        dados.setId(id++);
+    public static void salvarDados(Localizacao dados){
         LOCALIZACAO.add(dados);
+        for(int i = 0; i < LOCALIZACAO.size(); i++ ){
+            if(LOCALIZACAO.get(i) == dados){
+                dados.setId(i);
+                id = i;
+            }
+        }
     }
 
     public static List<Localizacao> listarTodos() {
         return LOCALIZACAO;
     }
 
-    public Localizacao buscar(int id){
+    public static Localizacao buscar(int id){
         for(Localizacao localizacao: LOCALIZACAO){
             if(id== localizacao.getId()){
                 return localizacao;
