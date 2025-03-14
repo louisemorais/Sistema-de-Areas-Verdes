@@ -13,7 +13,6 @@ public class Avaliacao {
     public void setId(int id){
         this.id=id;
     }
-
     public void setQualidadeArvore(double qualidadeArvore){
         this.qualidadeArvore=qualidadeArvore;
     }
@@ -71,6 +70,17 @@ public class Avaliacao {
         double formula= (this.qualidadeArvore+this.qualidadeAr+this.poluicaosonora
                 +this.coletaDeResiduo+this.transportePublico)/5.0;
         return formula;
+    }
+
+    public Avaliacao(int id, double qualidadeArvore, double qualidadeAr, double poluicaosonora, double coletaDeResiduo
+    ,double transportePublico, String tipoDeAreaVerde){
+        this.setId(id);
+        this.setQualidadeArvore(qualidadeArvore);
+        this.setQualidadeAr(qualidadeAr);
+        this.setAusenciaPoluicaoSonora(poluicaosonora);
+        this.setColetaDeResiduo(coletaDeResiduo);
+        this.setTransportePublico(transportePublico);
+        this.setipoDeAreaVerde(tipoDeAreaVerde);
     }
 
     public String toString(){
