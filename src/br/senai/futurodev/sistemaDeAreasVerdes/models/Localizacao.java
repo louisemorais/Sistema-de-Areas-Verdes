@@ -7,6 +7,13 @@ public class Localizacao {
     private double longitude;
     private int idAreaVerde;
 
+    public Localizacao(int id, double latitude, double longitude, int idAreaVerde){
+        this.setLongitude(longitude);
+        this.setLatitude(latitude);
+        this.setId(id);
+        this.setIdAreaVerde(idAreaVerde);
+    }
+
     //set
     public void setId(int id){
         this.id=id;
