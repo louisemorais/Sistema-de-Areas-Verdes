@@ -30,8 +30,8 @@ public class AreaVerde {
     public void setAtividadesDisponiveis(List atividadesDisponiveis){
         this.atividadesDisponiveis=atividadesDisponiveis;
     }
-    public void setListaDeAvaliacoes(List avaliacoes){
-        this.listaDeAvaliacoes=avaliacoes;
+    public void setAvaliacaoNaLista(Avaliacao avaliacao){
+        this.listaDeAvaliacoes.add(avaliacao);
     }
     //get
     public int getId(){
@@ -55,15 +55,13 @@ public class AreaVerde {
     public List<Avaliacao> getListaDeAvaliacoes() {
         return listaDeAvaliacoes;
     }
-
     //metodo calcular media
-    Avaliacao avaliacao=new Avaliacao();
     public double calcularMediaAvaliacoes(){
         if (listaDeAvaliacoes==null || listaDeAvaliacoes.isEmpty())
             return 0.0;
         double soma= 0.0;
-        for (Avaliacao listagemDeNota : listaDeAvaliacoes){
-            soma =avaliacao.mediaNota();
+        for (Avaliacao avaliacao : listaDeAvaliacoes){
+            soma +=avaliacao.mediaNota();
         }
         return soma/ listaDeAvaliacoes.size() ;
     }
