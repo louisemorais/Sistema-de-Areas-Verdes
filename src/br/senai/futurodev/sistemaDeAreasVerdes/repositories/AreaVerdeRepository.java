@@ -17,8 +17,8 @@ public class AreaVerdeRepository {
     public static List<AreaVerde> listarTodos() {
         return AREAVERDE;
     }
-
     public AreaVerde buscar(int id){
+        this.id=id;
         for(AreaVerde areaVerde: AREAVERDE){
             if (id == areaVerde.getId()) {
                 return areaVerde;
