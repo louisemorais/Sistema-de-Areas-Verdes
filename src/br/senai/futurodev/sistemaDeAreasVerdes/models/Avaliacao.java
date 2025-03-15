@@ -9,6 +9,32 @@ public class Avaliacao {
     private double transportePublico;
     private String tipoDeAreaVerde;
 
+    public Avaliacao(int id, double qualidadeArvore, double qualidadeAr, double poluicaosonora, double coletaDeResiduo
+            ,double transportePublico, String tipoDeAreaVerde){
+        this.setId(id);
+        this.setQualidadeArvore(qualidadeArvore);
+        this.setQualidadeAr(qualidadeAr);
+        this.setAusenciaPoluicaoSonora(poluicaosonora);
+        this.setColetaDeResiduo(coletaDeResiduo);
+        this.setTransportePublico(transportePublico);
+        this.setipoDeAreaVerde(tipoDeAreaVerde);
+    }
+
+    public double mediaNota(){
+        double formula= (this.qualidadeArvore+this.qualidadeAr+this.poluicaosonora
+                +this.coletaDeResiduo+this.transportePublico)/5.0;
+        return formula;
+    }
+
+    public double validacaoDeNota(double nota) {
+        if (nota < 1) {
+            return 1;
+        }if(nota >5) {
+            return 5;
+        }
+        return nota;
+    }
+
     //set
     public void setId(int id){
         this.id=id;
@@ -71,31 +97,6 @@ public class Avaliacao {
         return tipoDeAreaVerde;
     }
 
-    public double mediaNota(){
-        double formula= (this.qualidadeArvore+this.qualidadeAr+this.poluicaosonora
-                +this.coletaDeResiduo+this.transportePublico)/5.0;
-        return formula;
-    }
-
-    public double validacaoDeNota(double nota) {
-        if (nota < 1) {
-            return 1;
-        }if(nota >5) {
-            return 5;
-        }
-        return nota;
-    }
-
-    public Avaliacao(int id, double qualidadeArvore, double qualidadeAr, double poluicaosonora, double coletaDeResiduo
-    ,double transportePublico, String tipoDeAreaVerde){
-        this.setId(id);
-        this.setQualidadeArvore(qualidadeArvore);
-        this.setQualidadeAr(qualidadeAr);
-        this.setAusenciaPoluicaoSonora(poluicaosonora);
-        this.setColetaDeResiduo(coletaDeResiduo);
-        this.setTransportePublico(transportePublico);
-        this.setipoDeAreaVerde(tipoDeAreaVerde);
-    }
 
     public String toString(){
         return  "id: "+id+
