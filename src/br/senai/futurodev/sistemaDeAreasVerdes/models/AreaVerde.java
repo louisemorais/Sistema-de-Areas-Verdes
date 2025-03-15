@@ -84,6 +84,17 @@ public class AreaVerde {
         return listaDeAvaliacoes;
     }
 
+     public enum listaDeAtividade {
+        Caminhada,
+        Ciclismo,
+        Futebol,
+        Volei,
+        QuadraDeAreia,
+        Piquenique,
+        ParquinhoInfantil,
+        Pedalinho
+    }
+
     @Override
     public String toString(){
         return  "Area verde:" +
