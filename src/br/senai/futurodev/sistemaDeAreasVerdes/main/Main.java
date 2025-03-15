@@ -23,7 +23,9 @@ public class Main {
             switch (escolha) {
                 case 1:
                     List todos= AreaVerdeRepository.listarTodos();
-                    System.out.println(todos);
+                    for(int i=0;i<todos.size();i++) {
+                        System.out.println(todos.get(i));
+                    }
                     break;
                 case 2:
                     System.out.println("digite o id da Área Verde que deseja avaliar: ");
@@ -47,11 +49,8 @@ public class Main {
                     System.out.println("Avalie o acesso ao local por meio de transporte Público: ");
                     double transportePublico = input.nextDouble();
 
-                    System.out.println("diga o tipo de área verde: ");
-                    String tipoDeAreaVerde = input.nextLine();
-
                     Avaliacao avaliacao = new Avaliacao(id,arvores, ar, poluicaoSonora, coletaDeResiduo,
-                                          transportePublico, tipoDeAreaVerde);
+                                          transportePublico);
 
                     avaliacao.mediaNota();
                     areaNota.setAvaliacaoNaLista(avaliacao);

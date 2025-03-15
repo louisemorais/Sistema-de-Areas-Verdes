@@ -2,26 +2,24 @@ package br.senai.futurodev.sistemaDeAreasVerdes.models;
 
 public class Avaliacao {
     private int id;
-    private double qualidadeArvore;
+    private double quantidadeArvore;
     private double qualidadeAr;
     private double poluicaosonora;
     private double coletaDeResiduo;
     private double transportePublico;
-    private String tipoDeAreaVerde;
 
     public Avaliacao(int id, double qualidadeArvore, double qualidadeAr, double poluicaosonora, double coletaDeResiduo
-            ,double transportePublico, String tipoDeAreaVerde){
+            ,double transportePublico){
         this.setId(id);
-        this.setQualidadeArvore(qualidadeArvore);
+        this.setQuantidadeArvore(qualidadeArvore);
         this.setQualidadeAr(qualidadeAr);
         this.setAusenciaPoluicaoSonora(poluicaosonora);
         this.setColetaDeResiduo(coletaDeResiduo);
         this.setTransportePublico(transportePublico);
-        this.setipoDeAreaVerde(tipoDeAreaVerde);
     }
 
     public double mediaNota(){
-        double formula= (this.qualidadeArvore+this.qualidadeAr+this.poluicaosonora
+        double formula= (this.quantidadeArvore +this.qualidadeAr+this.poluicaosonora
                 +this.coletaDeResiduo+this.transportePublico)/5.0;
         return formula;
     }
@@ -39,9 +37,9 @@ public class Avaliacao {
     public void setId(int id){
         this.id=id;
     }
-    public void setQualidadeArvore(double qualidadeArvore){
-        double nota= validacaoDeNota(qualidadeArvore);
-        this.qualidadeArvore=nota;
+    public void setQuantidadeArvore(double quantidadeArvore){
+        double nota= validacaoDeNota(quantidadeArvore);
+        this.quantidadeArvore =nota;
     }
 
     public void setQualidadeAr(double qualidadeAr) {
@@ -64,17 +62,13 @@ public class Avaliacao {
         this.transportePublico = nota;
     }
 
-    public void setipoDeAreaVerde(String tipoDeAreaVerde) {
-        this.tipoDeAreaVerde = tipoDeAreaVerde;
-    }
-
     //get
     public int getId() {
         return id;
     }
 
-    public double getQualidadeArvore() {
-        return qualidadeArvore;
+    public double getQuantidadeArvore() {
+        return quantidadeArvore;
     }
 
     public double getQualidadeAr() {
@@ -93,18 +87,13 @@ public class Avaliacao {
         return transportePublico;
     }
 
-    public String getTipoDeAreaVerde() {
-        return tipoDeAreaVerde;
-    }
-
 
     public String toString(){
-        return  "id: "+id+
-                "\nQualidade das Árvores:         |        Avaliações: ★"   + qualidadeArvore +
+        return  "\nid: "+id+
+                "\nQuantidade de Árvores:         |        Avaliações: ★"   + quantidadeArvore +
                 "\nQualidade do ar:               |        Avaliações: ★"   + qualidadeAr +
                 "\nAusência de Poluição sonora:   |        Avaliações: ★"   + poluicaosonora+
                 "\nColeta de resíduo:             |        Avaliações: ★"   + coletaDeResiduo+
-                "\nTransporte público:            |        Avaliações: ★"   + transportePublico+
-                "\nTipo de área verde:            |        "+tipoDeAreaVerde;
+                "\nTransporte público:            |        Avaliações: ★"   + transportePublico+ "\n";
     }
 }
