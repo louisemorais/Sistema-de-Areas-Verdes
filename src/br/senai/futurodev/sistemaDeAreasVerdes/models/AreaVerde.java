@@ -2,6 +2,7 @@ package br.senai.futurodev.sistemaDeAreasVerdes.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class AreaVerde {
     private int id;
@@ -54,6 +55,7 @@ public class AreaVerde {
         this.localizacao = localizacao;
     }
     public void setAtividadesDisponiveis(listaDeAtividade atividadesDisponiveis){
+        escolhaTipoDeAtividade();
         this.atividadesDisponiveis = atividadesDisponiveis;
     }
 
@@ -95,6 +97,33 @@ public class AreaVerde {
         Pedalinho
     }
 
+    public listaDeAtividade escolhaTipoDeAtividade() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Selecione o tipo de atividade que sua área Verde Possui: ");
+        System.out.println("" +
+                "        1- Caminhada,\n" +
+                "        2- Ciclismo,\n" +
+                "        3- Futebol,\n" +
+                "        4- Volei,\n" +
+                "        5- QuadraDeAreia,\n" +
+                "        6- Piquenique,\n" +
+                "        7- ParquinhoInfantil,\n" +
+                "        8- Pedalinho");
+        int n = scanner.nextInt();
+        
+        switch (n) {
+            case 1 -> atividadesDisponiveis = listaDeAtividade.Caminhada;
+            case 2 -> atividadesDisponiveis = listaDeAtividade.Ciclismo;
+            case 3 -> atividadesDisponiveis = listaDeAtividade.Futebol;
+            case 4 -> atividadesDisponiveis = listaDeAtividade.Volei;
+            case 5 -> atividadesDisponiveis = listaDeAtividade.QuadraDeAreia;
+            case 6 -> atividadesDisponiveis = listaDeAtividade.Piquenique;
+            case 7 -> atividadesDisponiveis = listaDeAtividade.ParquinhoInfantil;
+            case 8 -> atividadesDisponiveis = listaDeAtividade.Pedalinho;
+            default -> System.out.println("Opção inválida. Escolha um número entre 1 e 8.");
+        }
+        return null;
+    }
     @Override
     public String toString(){
         return  "Area verde:" +
