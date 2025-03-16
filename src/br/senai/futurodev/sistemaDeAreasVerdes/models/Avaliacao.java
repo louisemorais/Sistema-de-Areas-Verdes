@@ -89,8 +89,7 @@ public class Avaliacao {
 
 
     public String toString(){
-        return  "\nid: "+id+
-                "\nQuantidade de Árvores:         |        Avaliações: ★"   + quantidadeArvore +
+        return  "Quantidade de Árvores:         |        Avaliações: ★"   + quantidadeArvore +
                 "\nQualidade do ar:               |        Avaliações: ★"   + qualidadeAr +
                 "\nAusência de Poluição sonora:   |        Avaliações: ★"   + poluicaosonora+
                 "\nColeta de resíduo:             |        Avaliações: ★"   + coletaDeResiduo+

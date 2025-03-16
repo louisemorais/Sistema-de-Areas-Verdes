@@ -59,6 +59,15 @@ public class Main {
                     System.out.println("Avaliação realizada com sucesso!");
                     break;
                 case 3:
+                    System.out.println("digite o id da Área Verde que deseja avaliar: ");
+                    int idInformacao = input.nextInt();
+                    input.nextLine();
+                    var infoArea=AreaVerdeRepository.buscar(idInformacao).imprimirDetalhado();
+
+                    var infoAvalicao=AvaliacaoRepository.buscar(idInformacao);
+
+                    System.out.println(infoArea);
+                    System.out.println(infoAvalicao);
                     break;
                 case 4:
                     AreaVerde areaVerde = new AreaVerde();
