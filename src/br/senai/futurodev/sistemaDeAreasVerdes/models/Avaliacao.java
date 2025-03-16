@@ -25,10 +25,13 @@ public class Avaliacao {
     }
 
     public double validacaoDeNota(double nota) {
-        if (nota < 1) {
-            return 1;
-        }if(nota >5) {
-            return 5;
+        if (nota != Math.floor(nota * 10) / 10) {
+            return 1.0;
+        }
+        if (nota < 1.0) {
+            return 1.0;
+        }if(nota >5.0) {
+            return 5.0;
         }
         return nota;
     }
