@@ -124,12 +124,21 @@ public class AreaVerde {
         }
         return null;
     }
+
+    public String imprimirDetalhado(){
+        return  "Area verde:"
+                +"\n"+ "nome: "+ nome
+                +"\n"+ "localizacao: "+localizacao.imprimitBasico()
+                +"\n"+ "tipo de vegetacao: "+tipoDeVegetacao
+                +"\n"+"Horários de Funcionamento: "+horariosDeFuncionamento
+                +"\n"+"atividades disponiveis: "+ atividadesDisponiveis;}
+
     @Override
     public String toString(){
         return  "Area verde:" +
                 "\n"+ "id:                       " + id +
                 "\n"+ "nome:                     " + nome +
-                "\n"+ "localizacao:             " + localizacao.imprimitBasico() +
+                "\n"+ "localizacao:              " + localizacao.imprimitBasico() +
                 "\n"+ "tipo de vegetacao:        " + tipoDeVegetacao+
                 "\n"+ "Horários de Funcionamento:" + horariosDeFuncionamento+
                 "\n"+ "atividades disponiveis:   " + atividadesDisponiveis+
