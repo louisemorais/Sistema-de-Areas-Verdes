@@ -30,8 +30,13 @@ public class Main {
             switch (escolha) {
                 case 1:
                     List todos= AreaVerdeRepository.listarTodos();
-                    for(int i=0;i<todos.size();i++) {
-                        System.out.println(todos.get(i));}
+                    if(todos.isEmpty()||todos==null){
+                        System.out.println(" Não há Áreas verdes cadastradas ainda.");
+                    }else {
+                        for (int i = 0; i < todos.size(); i++) {
+                            System.out.println(todos.get(i));
+                        }
+                    }
                     break;
                 case 2:
                     System.out.println("digite o id da Área Verde que deseja avaliar: ");
@@ -57,7 +62,6 @@ public class Main {
 
                     Avaliacao avaliacao = new Avaliacao(id,arvores, ar, poluicaoSonora,
                                           coletaDeResiduo,transportePublico);
-
                     avaliacao.mediaNota();
                     areaNota.setAvaliacaoNaLista(avaliacao);
 
@@ -68,14 +72,26 @@ public class Main {
                     System.out.println("digite o id da Área Verde que deseja avaliar: ");
                     int idInformacao = input.nextInt();
                     input.nextLine();
-                    var infoArea=AreaVerdeRepository.buscar(idInformacao).imprimirDetalhado();
 
-                    var infoAvalicao=AvaliacaoRepository.buscar(idInformacao);
-                    System.out.println("  ᨒ↟ DETALHES DA AREA VERDE ᨒ↟\n"+
-                                       "┌──────────────────────────────────────────────────────────────────┐");
-                    System.out.println(infoArea);
-                    System.out.println(infoAvalicao);
-                    System.out.println("└───────────────────────────────────────────────────────────────────┘");
+                    //validação de área verde
+                    var infoArea = AreaVerdeRepository.buscar(idInformacao);
+                    if (infoArea == null) {
+                        System.out.println(" Área Verde com o ID " + idInformacao + " não encontrada.");
+                    } else {
+                        System.out.println("  ᨒ↟ DETALHES DA AREA VERDE ᨒ↟\n"+
+                                "┌───────────────────────────────────────────────────────────────────┐");
+                        infoArea.imprimirDetalhado();
+                    }
+
+                    //validação de avaliação
+                    var infoAvaliacao = AvaliacaoRepository.buscar(idInformacao);
+                    if (infoAvaliacao == null) {
+                        System.out.println(" Não há avaliações para a Área Verde com o ID " + idInformacao + ".");
+                    } else {
+                        System.out.println(infoAvaliacao);
+                        System.out.println("└───────────────────────────────────────────────────────────────────┘");
+                    }
+
                     break;
                 case 4:
                     AreaVerde areaVerde = new AreaVerde();
@@ -100,6 +116,10 @@ public class Main {
 
                     AreaVerdeRepository.salvarDados(areaVerde);
                     LocalizacaoRepository.salvarDados(localizacao);
+
+                    System.out.println("ID gerado: " + areaVerde.getId());
+                    System.out.println("Área verde cadastradas!");
+
                     break;
                 case 0:
                     System.out.println("Saindo...");
