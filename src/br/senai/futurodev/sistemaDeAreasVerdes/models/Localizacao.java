@@ -43,7 +43,7 @@ public class Localizacao {
     }
 
     public String imprimitBasico(){
-        return " latitude:" + latitude + " longitude: " + longitude;
+        return " latitude: " + latitude+" │" + " longitude: " + longitude;
     }
 
     //Aplicação do toString

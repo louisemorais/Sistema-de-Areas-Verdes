@@ -147,7 +147,7 @@ public class AreaVerde {
     @Override
     public String toString(){
         return  "\n AREA VERDE ᨒ↟" +
-                "\n┌──────────────────────────────────────────────────────────────┐"+
+                "\n┌─────────────────────────────────────────────────────────────────────────────┐"+
                 "\n"+ " Id:                          │    " + id +
                 "\n"+ " Nome:                        │    " + nome +
                 "\n"+ " Localizacao:                 │   " + localizacao.imprimitBasico() +
@@ -155,6 +155,6 @@ public class AreaVerde {
                 "\n"+ " Horários de Funcionamento:   │    " + formatacaoDeHoras(horariosDeFuncionamento)+
                 "\n"+ " Atividades disponíveis:      │    " + atividadesDisponiveis+
                 String.format("\n Média das Avaliações:             ★%.2f", calcularMediaAvaliacoes()) +
-                "\n"+ "└──────────────────────────────────────────────────────────────┘" +"\n";
+                "\n└─────────────────────────────────────────────────────────────────────────────┘" +"\n";
     }
 }
