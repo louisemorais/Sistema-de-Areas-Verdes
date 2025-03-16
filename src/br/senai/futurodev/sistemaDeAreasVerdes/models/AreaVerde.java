@@ -125,6 +125,16 @@ public class AreaVerde {
         return null;
     }
 
+    public String formatacaoDeHoras(double horariosDeFuncionamento){
+        double valor= horariosDeFuncionamento;
+        int horas = (int) valor;
+
+        int minutos = (int) Math.round((valor - horas) * 100);
+
+        return horas + "h" + minutos;
+    }
+
+
     public String imprimirDetalhado(){
         return  "Area verde:"
                 +"\n"+ "nome: "+ nome
@@ -141,7 +151,7 @@ public class AreaVerde {
                 "\n"+ " Nome:                        │    " + nome +
                 "\n"+ " Localizacao:                 │   " + localizacao.imprimitBasico() +
                 "\n"+ " Tipo de Vegetação:           │    " + tipoDeVegetacao+
-                "\n"+ " Horários de Funcionamento:   │    " + horariosDeFuncionamento+
+                "\n"+ " Horários de Funcionamento:   │    " + formatacaoDeHoras(horariosDeFuncionamento)+
                 "\n"+ " Atividades disponíveis:      │    " + atividadesDisponiveis+
                 String.format("\n Média das Avaliações:             ★%.2f", calcularMediaAvaliacoes()) +
                 "\n"+ "└──────────────────────────────────────────────────────────────┘" +"\n";
