@@ -100,15 +100,17 @@ public class AreaVerde {
     public listaDeAtividade escolhaTipoDeAtividade() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Selecione o tipo de atividade que sua área Verde Possui: ");
-        System.out.println("" +
-                "        1- Caminhada,\n" +
-                "        2- Ciclismo,\n" +
-                "        3- Futebol,\n" +
-                "        4- Volei,\n" +
-                "        5- QuadraDeAreia,\n" +
-                "        6- Piquenique,\n" +
-                "        7- ParquinhoInfantil,\n" +
-                "        8- Pedalinho");
+        System.out.println(
+                "╭────────────────────────╮\n"+
+                "│  1- Caminhada          │\n" +
+                "│  2- Ciclismo           │\n" +
+                "│  3- Futebol            │\n" +
+                "│  4- Volei              │\n" +
+                "│  5- QuadraDeAreia      │\n" +
+                "│  6- Piquenique         │\n" +
+                "│  7- ParquinhoInfantil  │\n" +
+                "│  8- Pedalinho          │\n"+
+                "╰────────────────────────╯");
         int n = scanner.nextInt();
 
         switch (n) {
@@ -136,16 +138,15 @@ public class AreaVerde {
 
 
     public String imprimirDetalhado(){
-        return  "Area verde:"
-                +"\n"+ "nome: "+ nome
-                +"\n"+ "localizacao: "+localizacao.imprimitBasico()
-                +"\n"+ "tipo de vegetacao: "+tipoDeVegetacao
-                +"\n"+"Horários de Funcionamento: "+horariosDeFuncionamento
-                +"\n"+"atividades disponiveis: "+ atividadesDisponiveis;}
+        return  "  Nome:                          │    " + nome +"\n"+
+                "  Localizacao:                   │   " + localizacao.imprimitBasico()+"\n"+
+                "  Tipo de Vegetação:             │    " + tipoDeVegetacao+"\n"+
+                "  Horários de Funcionamento:     │    " + formatacaoDeHoras(horariosDeFuncionamento)+ "\n"+
+                "  Atividades disponíveis:        │    " + atividadesDisponiveis;}
 
     @Override
     public String toString(){
-        return  "\n AREA VERDE" +
+        return  "\n AREA VERDE ᨒ↟" +
                 "\n┌──────────────────────────────────────────────────────────────┐"+
                 "\n"+ " Id:                          │    " + id +
                 "\n"+ " Nome:                        │    " + nome +

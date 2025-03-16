@@ -71,9 +71,11 @@ public class Main {
                     var infoArea=AreaVerdeRepository.buscar(idInformacao).imprimirDetalhado();
 
                     var infoAvalicao=AvaliacaoRepository.buscar(idInformacao);
-
+                    System.out.println("  ᨒ↟ DETALHES DA AREA VERDE ᨒ↟\n"+
+                                       "┌──────────────────────────────────────────────────────────────────┐");
                     System.out.println(infoArea);
                     System.out.println(infoAvalicao);
+                    System.out.println("└───────────────────────────────────────────────────────────────────┘");
                     break;
                 case 4:
                     AreaVerde areaVerde = new AreaVerde();
