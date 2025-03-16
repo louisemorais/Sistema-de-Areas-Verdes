@@ -110,7 +110,7 @@ public class AreaVerde {
                 "        7- ParquinhoInfantil,\n" +
                 "        8- Pedalinho");
         int n = scanner.nextInt();
-        
+
         switch (n) {
             case 1 -> atividadesDisponiveis = listaDeAtividade.Caminhada;
             case 2 -> atividadesDisponiveis = listaDeAtividade.Ciclismo;
@@ -135,13 +135,15 @@ public class AreaVerde {
 
     @Override
     public String toString(){
-        return  "Area verde:" +
-                "\n"+ "id:                       " + id +
-                "\n"+ "nome:                     " + nome +
-                "\n"+ "localizacao:              " + localizacao.imprimitBasico() +
-                "\n"+ "tipo de vegetacao:        " + tipoDeVegetacao+
-                "\n"+ "Horários de Funcionamento:" + horariosDeFuncionamento+
-                "\n"+ "atividades disponiveis:   " + atividadesDisponiveis+
-                String.format("\nMédia das avaliação:            ★%.2f", calcularMediaAvaliacoes()) + "\n";
+        return  "\n AREA VERDE" +
+                "\n┌──────────────────────────────────────────────────────────────┐"+
+                "\n"+ " Id:                          │    " + id +
+                "\n"+ " Nome:                        │    " + nome +
+                "\n"+ " Localizacao:                 │   " + localizacao.imprimitBasico() +
+                "\n"+ " Tipo de Vegetação:           │    " + tipoDeVegetacao+
+                "\n"+ " Horários de Funcionamento:   │    " + horariosDeFuncionamento+
+                "\n"+ " Atividades disponíveis:      │    " + atividadesDisponiveis+
+                String.format("\n Média das Avaliações:             ★%.2f", calcularMediaAvaliacoes()) +
+                "\n"+ "└──────────────────────────────────────────────────────────────┘" +"\n";
     }
 }
