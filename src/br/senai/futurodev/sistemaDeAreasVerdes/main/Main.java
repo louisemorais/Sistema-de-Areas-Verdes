@@ -6,7 +6,6 @@ import br.senai.futurodev.sistemaDeAreasVerdes.models.Localizacao;
 import br.senai.futurodev.sistemaDeAreasVerdes.repositories.AreaVerdeRepository;
 import br.senai.futurodev.sistemaDeAreasVerdes.repositories.AvaliacaoRepository;
 import br.senai.futurodev.sistemaDeAreasVerdes.repositories.LocalizacaoRepository;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,16 +15,23 @@ public class Main {
         Boolean rodando=true;
 
         while (rodando){
-            System.out.printf("1- Listar Áreas Verdes\n" + "2- Avaliar Área Verde\n" + "3- Ver detalhe de uma Área Verde\n" +
-                    "4- Cadastrar nova Área Verde\n" + "0- Sair" +"\n"+"Digite a opção que deseja acessar:");
+            System.out.printf("┌────────────────────────────────────────┐"+ "\n"
+                            +"│     ᨒ↟ SISTEMA DE ÁREAS VERDES ᨒ↟     │\n"
+                            +"├────────────────────────────────────────┤\n"
+                            + "│   1- Listar Áreas Verdes               │\n"
+                            + "│   2- Avaliar Área Verde                │\n"
+                            + "│   3- Ver detalhe de uma Área Verde     │\n"
+                            +"│   4- Cadastrar nova Área Verde         │\n"
+                            + "│   0- Sair                              │\n"
+                            +"└────────────────────────────────────────┘"+ "\n"
+                            +"Digite a opção que deseja acessar: ");
             int escolha = input.nextInt();
 
             switch (escolha) {
                 case 1:
                     List todos= AreaVerdeRepository.listarTodos();
                     for(int i=0;i<todos.size();i++) {
-                        System.out.println(todos.get(i));
-                    }
+                        System.out.println(todos.get(i));}
                     break;
                 case 2:
                     System.out.println("digite o id da Área Verde que deseja avaliar: ");
@@ -49,8 +55,8 @@ public class Main {
                     System.out.println("Avalie o acesso ao local por meio de transporte Público: ");
                     double transportePublico = input.nextDouble();
 
-                    Avaliacao avaliacao = new Avaliacao(id,arvores, ar, poluicaoSonora, coletaDeResiduo,
-                                          transportePublico);
+                    Avaliacao avaliacao = new Avaliacao(id,arvores, ar, poluicaoSonora,
+                                          coletaDeResiduo,transportePublico);
 
                     avaliacao.mediaNota();
                     areaNota.setAvaliacaoNaLista(avaliacao);
@@ -94,6 +100,7 @@ public class Main {
                     LocalizacaoRepository.salvarDados(localizacao);
                     break;
                 case 0:
+                    System.out.println("Saindo...");
                     rodando=false;
                     break;
             }
