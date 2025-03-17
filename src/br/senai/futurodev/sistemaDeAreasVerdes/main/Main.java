@@ -80,7 +80,7 @@ public class Main {
                     } else {
                         System.out.println("  ᨒ↟ DETALHES DA AREA VERDE ᨒ↟\n"+
                                 "┌───────────────────────────────────────────────────────────────────┐");
-                        infoArea.imprimirDetalhado();
+                        System.out.println(infoArea.imprimirDetalhado());
                     }
 
                     //validação de avaliação
