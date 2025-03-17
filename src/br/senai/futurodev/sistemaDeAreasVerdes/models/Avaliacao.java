@@ -1,5 +1,6 @@
 package br.senai.futurodev.sistemaDeAreasVerdes.models;
 
+    //ATRIBUTOS
 public class Avaliacao {
     private int id;
     private double quantidadeArvore;
@@ -8,8 +9,9 @@ public class Avaliacao {
     private double coletaDeResiduo;
     private double transportePublico;
 
-    public Avaliacao(int id, double qualidadeArvore, double qualidadeAr, double poluicaosonora, double coletaDeResiduo
-            ,double transportePublico){
+    //CONSTRUTOR
+    public Avaliacao(int id, double qualidadeArvore, double qualidadeAr, double poluicaosonora, double coletaDeResiduo,
+                     double transportePublico){
         this.setId(id);
         this.setQuantidadeArvore(qualidadeArvore);
         this.setQualidadeAr(qualidadeAr);
@@ -18,6 +20,7 @@ public class Avaliacao {
         this.setTransportePublico(transportePublico);
     }
 
+    //METODOS
     public double mediaNota(){
         double formula= (this.quantidadeArvore +this.qualidadeAr+this.poluicaosonora
                 +this.coletaDeResiduo+this.transportePublico)/5.0;
@@ -36,7 +39,7 @@ public class Avaliacao {
         return nota;
     }
 
-    //set
+    //SETTER
     public void setId(int id){
         this.id=id;
     }
@@ -65,7 +68,7 @@ public class Avaliacao {
         this.transportePublico = nota;
     }
 
-    //get
+    //GETTER
     public int getId() {
         return id;
     }
@@ -90,7 +93,8 @@ public class Avaliacao {
         return transportePublico;
     }
 
-
+    //ToString
+    @Override
     public String toString(){
         return  " Quantidade de Árvores:         │    Avaliações: ★"   + quantidadeArvore +"\n"+
                 " Qualidade do ar:               │    Avaliações: ★"   + qualidadeAr + "\n"+

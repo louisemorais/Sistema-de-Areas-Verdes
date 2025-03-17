@@ -1,18 +1,24 @@
 package br.senai.futurodev.sistemaDeAreasVerdes.models;
 
+    //ATRIBUTOS
 public class Localizacao {
-    //atributos
     private int id;
     private double latitude;
     private double longitude;
     private int idAreaVerde;
 
+    //CONSTRUTOR
     public Localizacao(double latitude, double longitude){
         this.setLongitude(longitude);
         this.setLatitude(latitude);
     }
 
-    //set
+    //METODO
+    public String imprimirBasico(){
+        return " latitude: " + latitude+" │" + " longitude: " + longitude;
+    }
+
+    //SETTER
     public void setId(int id){
         this.id=id;
     }
@@ -26,7 +32,7 @@ public class Localizacao {
         this.idAreaVerde= idAreaVerde;
     }
 
-    //get
+    //GETTER
     public int getId(){
         return id;
     }
@@ -42,11 +48,7 @@ public class Localizacao {
         return idAreaVerde;
     }
 
-    public String imprimitBasico(){
-        return " latitude: " + latitude+" │" + " longitude: " + longitude;
-    }
-
-    //Aplicação do toString
+    //ToString
     @Override
     public String toString(){
         return "id: "+id+ " latitude:" + latitude + " longitude: " + longitude + " identificação da area: " + idAreaVerde;

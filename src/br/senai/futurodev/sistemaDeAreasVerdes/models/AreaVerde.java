@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+    //ATRIBUTOS
 public class AreaVerde {
     private int id;
     private String nome;
@@ -13,21 +14,12 @@ public class AreaVerde {
     private listaDeAtividade atividadesDisponiveis;
     private List<Avaliacao> listaDeAvaliacoes;
 
+    //CONSTRUTOR
     public AreaVerde(){
         this.listaDeAvaliacoes = new ArrayList<Avaliacao>();
     }
 
-    public AreaVerde(String nome,String tipoDeVegetacao, double horariosDeFuncionamento,  Localizacao localizacao, listaDeAtividade atividadesDisponiveis,Avaliacao avaliacao){
-        this.nome = nome;
-        this.tipoDeVegetacao = tipoDeVegetacao;
-        this.horariosDeFuncionamento = horariosDeFuncionamento;
-        this.localizacao = localizacao;
-        this.atividadesDisponiveis = atividadesDisponiveis;
-        this.listaDeAvaliacoes = new ArrayList<Avaliacao>();
-        this.listaDeAvaliacoes.add(avaliacao);
-    }
-
-    //metodo calcular media
+    //MÉTODOS
     public double calcularMediaAvaliacoes(){
         if (listaDeAvaliacoes==null || listaDeAvaliacoes.isEmpty())
             return 0.0;
@@ -38,55 +30,7 @@ public class AreaVerde {
         return soma / listaDeAvaliacoes.size() ;
     }
 
-    //set
-    public void setId(int id){
-        this.id = id;
-    }
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-    public void setTipoDeVegetacao(String tipoDeVegetacao){
-        this.tipoDeVegetacao = tipoDeVegetacao;
-    }
-    public void setHorariosDeFuncionamento(double horariosDeFuncionamento){
-        this.horariosDeFuncionamento = horariosDeFuncionamento;
-    }
-    public void setLocalizacao(Localizacao localizacao){
-        this.localizacao = localizacao;
-    }
-    public void setAtividadesDisponiveis(listaDeAtividade atividadesDisponiveis){
-        escolhaTipoDeAtividade();
-        this.atividadesDisponiveis = atividadesDisponiveis;
-    }
-
-    public void setAvaliacaoNaLista(Avaliacao avaliacao){
-        this.listaDeAvaliacoes.add(avaliacao);
-    }
-
-    //get
-    public int getId(){
-        return id;
-    }
-    public String getNome(){
-        return nome;
-    }
-    public String getTipoDeVegetacao(){
-        return tipoDeVegetacao;
-    }
-    public double getHorariosDeFuncionamento(){
-        return horariosDeFuncionamento;
-    }
-    public Localizacao getLocalizacao(){
-        return localizacao;
-    }
-    public listaDeAtividade getAtividadesDisponiveis() {
-        return atividadesDisponiveis;
-    }
-    public List<Avaliacao> getListaDeAvaliacoes() {
-        return listaDeAvaliacoes;
-    }
-
-     public enum listaDeAtividade {
+    public enum listaDeAtividade {
         Caminhada,
         Ciclismo,
         Futebol,
@@ -101,16 +45,16 @@ public class AreaVerde {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Selecione o tipo de atividade que sua área Verde Possui: ");
         System.out.println(
-                "╭────────────────────────╮\n"+
-                "│  1- Caminhada          │\n" +
-                "│  2- Ciclismo           │\n" +
-                "│  3- Futebol            │\n" +
-                "│  4- Volei              │\n" +
-                "│  5- QuadraDeAreia      │\n" +
-                "│  6- Piquenique         │\n" +
-                "│  7- ParquinhoInfantil  │\n" +
-                "│  8- Pedalinho          │\n"+
-                "╰────────────────────────╯");
+                        "╭────────────────────────╮\n" +
+                        "│  1- Caminhada          │\n" +
+                        "│  2- Ciclismo           │\n" +
+                        "│  3- Futebol            │\n" +
+                        "│  4- Volei              │\n" +
+                        "│  5- QuadraDeAreia      │\n" +
+                        "│  6- Piquenique         │\n" +
+                        "│  7- ParquinhoInfantil  │\n" +
+                        "│  8- Pedalinho          │\n" +
+                        "╰────────────────────────╯");
         int n = scanner.nextInt();
 
         switch (n) {
@@ -139,18 +83,68 @@ public class AreaVerde {
 
     public String imprimirDetalhado(){
         return  " Nome:                          │    " + nome +"\n"+
-                " Localizacao:                   │   " + localizacao.imprimitBasico()+"\n"+
+                " Localizacao:                   │   " + localizacao.imprimirBasico()+"\n"+
                 " Tipo de Vegetação:             │    " + tipoDeVegetacao+"\n"+
                 " Horários de Funcionamento:     │    " + formatacaoDeHoras(horariosDeFuncionamento)+ "\n"+
                 " Atividades disponíveis:        │    " + atividadesDisponiveis;}
 
+
+    //SETTERS
+    public void setId(int id){
+        this.id = id;
+    }
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    public void setTipoDeVegetacao(String tipoDeVegetacao){
+        this.tipoDeVegetacao = tipoDeVegetacao;
+    }
+    public void setHorariosDeFuncionamento(double horariosDeFuncionamento){
+        this.horariosDeFuncionamento = horariosDeFuncionamento;
+    }
+    public void setLocalizacao(Localizacao localizacao){
+        this.localizacao = localizacao;
+    }
+    public void setAtividadesDisponiveis(listaDeAtividade atividadesDisponiveis){
+        escolhaTipoDeAtividade();
+        this.atividadesDisponiveis = atividadesDisponiveis;
+    }
+
+    public void setAvaliacaoNaLista(Avaliacao avaliacao){
+        this.listaDeAvaliacoes.add(avaliacao);
+    }
+
+    //GETTERS
+    public int getId(){
+        return id;
+    }
+    public String getNome(){
+        return nome;
+    }
+    public String getTipoDeVegetacao(){
+        return tipoDeVegetacao;
+    }
+    public double getHorariosDeFuncionamento(){
+        return horariosDeFuncionamento;
+    }
+    public Localizacao getLocalizacao(){
+        return localizacao;
+    }
+    public listaDeAtividade getAtividadesDisponiveis() {
+        return atividadesDisponiveis;
+    }
+    public List<Avaliacao> getListaDeAvaliacoes() {
+        return listaDeAvaliacoes;
+    }
+
+    //ToString
     @Override
     public String toString(){
         return  "\n AREA VERDE ᨒ↟" +
                 "\n┌─────────────────────────────────────────────────────────────────────────────┐"+
                 "\n"+ " Id:                          │    " + id +
                 "\n"+ " Nome:                        │    " + nome +
-                "\n"+ " Localizacao:                 │   " + localizacao.imprimitBasico() +
+                "\n"+ " Localizacao:                 │   " + localizacao.imprimirBasico() +
                 "\n"+ " Tipo de Vegetação:           │    " + tipoDeVegetacao+
                 "\n"+ " Horários de Funcionamento:   │    " + formatacaoDeHoras(horariosDeFuncionamento)+
                 "\n"+ " Atividades disponíveis:      │    " + atividadesDisponiveis+
