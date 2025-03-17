@@ -73,13 +73,13 @@ public class Main {
                     int idInformacao = input.nextInt();
                     input.nextLine();
 
+                    System.out.println("  ᨒ↟ DETALHES DA AREA VERDE ᨒ↟\n"+
+                            "┌───────────────────────────────────────────────────────────────────┐");
                     //validação de área verde
                     var infoArea = AreaVerdeRepository.buscar(idInformacao);
                     if (infoArea == null) {
                         System.out.println(" Área Verde com o ID " + idInformacao + " não encontrada.");
                     } else {
-                        System.out.println("  ᨒ↟ DETALHES DA AREA VERDE ᨒ↟\n"+
-                                "┌───────────────────────────────────────────────────────────────────┐");
                         System.out.println(infoArea.imprimirDetalhado());
                     }
 
@@ -89,8 +89,7 @@ public class Main {
                         System.out.println(" Não há avaliações para a Área Verde com o ID " + idInformacao + ".");
                     } else {
                         System.out.println(infoAvaliacao);
-                        System.out.println("└───────────────────────────────────────────────────────────────────┘");
-                    }
+                    } System.out.println("└───────────────────────────────────────────────────────────────────┘");
 
                     break;
                 case 4:
