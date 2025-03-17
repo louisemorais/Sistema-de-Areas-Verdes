@@ -138,11 +138,11 @@ public class AreaVerde {
 
 
     public String imprimirDetalhado(){
-        return  "  Nome:                          │    " + nome +"\n"+
-                "  Localizacao:                   │   " + localizacao.imprimitBasico()+"\n"+
-                "  Tipo de Vegetação:             │    " + tipoDeVegetacao+"\n"+
-                "  Horários de Funcionamento:     │    " + formatacaoDeHoras(horariosDeFuncionamento)+ "\n"+
-                "  Atividades disponíveis:        │    " + atividadesDisponiveis;}
+        return  " Nome:                          │    " + nome +"\n"+
+                " Localizacao:                   │   " + localizacao.imprimitBasico()+"\n"+
+                " Tipo de Vegetação:             │    " + tipoDeVegetacao+"\n"+
+                " Horários de Funcionamento:     │    " + formatacaoDeHoras(horariosDeFuncionamento)+ "\n"+
+                " Atividades disponíveis:        │    " + atividadesDisponiveis;}
 
     @Override
     public String toString(){

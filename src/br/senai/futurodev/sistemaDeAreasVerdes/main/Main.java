@@ -42,60 +42,63 @@ public class Main {
                     System.out.println("digite o id da Área Verde que deseja avaliar: ");
                     int id = input.nextInt();
                     input.nextLine();
-
                     AreaVerde areaNota= AreaVerdeRepository.buscar(id);
+                    //validação
+                    if(areaNota==null){
+                        System.out.println("Área Verde com o ID " + id + " não encontrada.");
+                    }else {
+                        System.out.println("Avalie a quantidade de árvores: ");
+                        double arvores = input.nextDouble();
 
-                    System.out.println("Avalie a qualidade das árvores: ");
-                    double arvores = input.nextDouble();
+                        System.out.println("Avalie a qualidade do ar: ");
+                        double ar = input.nextDouble();
 
-                    System.out.println("Avalie a qualidade do ar: ");
-                    double ar = input.nextDouble();
+                        System.out.println("Avalie a Ausência de poluição sonora: ");
+                        double poluicaoSonora = input.nextDouble();
 
-                    System.out.println("Avalie a poluição sonora: ");
-                    double poluicaoSonora = input.nextDouble();
+                        System.out.println("Avalie a coleta de resíduo: ");
+                        double coletaDeResiduo = input.nextDouble();
 
-                    System.out.println("Avalie a coleta de resíduo: ");
-                    double coletaDeResiduo = input.nextDouble();
+                        System.out.println("Avalie o acesso ao local por meio de transporte Público: ");
+                        double transportePublico = input.nextDouble();
 
-                    System.out.println("Avalie o acesso ao local por meio de transporte Público: ");
-                    double transportePublico = input.nextDouble();
+                        Avaliacao avaliacao = new Avaliacao(id,arvores, ar, poluicaoSonora,
+                                coletaDeResiduo,transportePublico);
+                        avaliacao.mediaNota();
+                        areaNota.setAvaliacaoNaLista(avaliacao);
 
-                    Avaliacao avaliacao = new Avaliacao(id,arvores, ar, poluicaoSonora,
-                                          coletaDeResiduo,transportePublico);
-                    avaliacao.mediaNota();
-                    areaNota.setAvaliacaoNaLista(avaliacao);
-
-                    AvaliacaoRepository.salvarDados(avaliacao);
-                    System.out.println("Avaliação realizada com sucesso!");
+                        AvaliacaoRepository.salvarDados(avaliacao);
+                        System.out.println("Avaliação realizada com sucesso!");
+                    }
                     break;
                 case 3:
-                    System.out.println("digite o id da Área Verde que deseja avaliar: ");
+                    System.out.println("Digite o id da Área Verde que deseja ver detalhes: ");
                     int idInformacao = input.nextInt();
                     input.nextLine();
 
                     System.out.println("  ᨒ↟ DETALHES DA AREA VERDE ᨒ↟\n"+
-                            "┌───────────────────────────────────────────────────────────────────┐");
+                            "┌─────────────────────────────────────────────────────────────────────────────┐");
                     //validação de área verde
-                    var infoArea = AreaVerdeRepository.buscar(idInformacao);
+                    AreaVerde infoArea = AreaVerdeRepository.buscar(idInformacao);
                     if (infoArea == null) {
-                        System.out.println(" Área Verde com o ID " + idInformacao + " não encontrada.");
+                        System.out.println("  Área Verde com o ID " + idInformacao + " não encontrada.");
                     } else {
                         System.out.println(infoArea.imprimirDetalhado());
                     }
 
                     //validação de avaliação
-                    var infoAvaliacao = AvaliacaoRepository.buscar(idInformacao);
+                    Avaliacao infoAvaliacao = AvaliacaoRepository.buscar(idInformacao);
                     if (infoAvaliacao == null) {
-                        System.out.println(" Não há avaliações para a Área Verde com o ID " + idInformacao + ".");
+                        System.out.println("  Não há avaliações para a Área Verde com o ID " + idInformacao + ".");
                     } else {
                         System.out.println(infoAvaliacao);
-                    } System.out.println("└───────────────────────────────────────────────────────────────────┘");
+                    } System.out.println("└─────────────────────────────────────────────────────────────────────────────┘");
 
                     break;
                 case 4:
                     AreaVerde areaVerde = new AreaVerde();
 
-                    System.out.println("Diga o nome da area verde: ");
+                    System.out.println("Diga o nome da área verde: ");
                     areaVerde.setNome(input.next());
                     input.nextLine();
 

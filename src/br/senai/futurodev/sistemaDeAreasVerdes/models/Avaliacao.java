@@ -92,10 +92,10 @@ public class Avaliacao {
 
 
     public String toString(){
-        return  "  Quantidade de Árvores:         │    Avaliações: ★"   + quantidadeArvore +"\n"+
-                "  Qualidade do ar:               │    Avaliações: ★"   + qualidadeAr + "\n"+
-                "  Ausência de Poluição sonora:   │    Avaliações: ★"   + poluicaosonora+ "\n"+
-                "  Coleta de resíduo:             │    Avaliações: ★"   + coletaDeResiduo+ "\n"+
-                "  Transporte público:            │    Avaliações: ★"   + transportePublico;
+        return  " Quantidade de Árvores:         │    Avaliações: ★"   + quantidadeArvore +"\n"+
+                " Qualidade do ar:               │    Avaliações: ★"   + qualidadeAr + "\n"+
+                " Ausência de Poluição sonora:   │    Avaliações: ★"   + poluicaosonora+ "\n"+
+                " Coleta de resíduo:             │    Avaliações: ★"   + coletaDeResiduo+ "\n"+
+                " Transporte público:            │    Avaliações: ★"   + transportePublico;
     }
 }
