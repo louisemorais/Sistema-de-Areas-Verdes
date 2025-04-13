@@ -58,5 +58,5 @@ Sistema-de-Areas-Verdes/
  <br />
  <sub><b>Louise Morais</b></sub></a> <a href="https://github.com/louisemorais" title="Louise Morais"></a>
  <br />
- <a href="https://www.linkedin.com/in/louise-morais-75533427a">
+ <a href="https://www.linkedin.com/in/louisemorais/">
       <img style="margin-top: 12px" src="https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
